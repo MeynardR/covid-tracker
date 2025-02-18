@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from 'react-router-dom';
 
-// import Dropdown from './Dropdown';
+import Dropdown from './Dropdown';
 
 import "./ThirdPart.css";
 
@@ -10,9 +10,9 @@ const ThirdPart = () => {
     
     <React.Fragment>
       <nav className="nav-links">
-        {/* <div>
+        <div>
           <Dropdown />
-        </div> */}
+        </div>
         <ul className="nav-links">
             <li>
               <NavLink to="/cases">Cases</NavLink>
@@ -24,7 +24,7 @@ const ThirdPart = () => {
               <NavLink to="/charts">Charts</NavLink>
             </li>
             <li>
-              <NavLink to="/others">More</NavLink>
+              <NavLink to="/cases">More</NavLink>
             </li>
         </ul>
       </nav>
