@@ -1,0 +1,21 @@
+
+.loading:after {
+    animation: dots 2s linear infinite;
+    content: '';   
+  }
+  
+  @keyframes dots {
+    0%, 20% {
+      content: '.';
+    }
+    40% {
+      content: '..';
+    }
+    60% {
+      content: '...';
+    }
+    90%, 100% {
+      content: '....';
+    } 
+  }
+    

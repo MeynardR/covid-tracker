@@ -1,0 +1,32 @@
+#geography {
+    fill: #EEE;
+}
+
+#geography:hover {
+    fill: #F53;
+}
+
+#circle {
+    font-family: system-ui;
+    fill: #0582bb;
+    opacity: 0.5;
+}
+
+#circle:hover {
+    fill: black;
+    /* stroke: black;
+    stroke-width: 4px; */
+}
+
+#circle:hover + #hidden-text {
+    fill: #4a4e58;
+    font-weight: bold;
+    visibility: visible;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#hidden-text {
+    /* font-family: system-ui;  */
+    visibility: hidden;
+    white-space: pre;
+} 
