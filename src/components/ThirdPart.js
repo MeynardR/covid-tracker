@@ -5,13 +5,16 @@ import Dropdown from './Dropdown';
 
 import "./ThirdPart.css";
 
-const ThirdPart = () => {
+const ThirdPart = (props) => {
+
+  const countryNames = props.countryNames;
+
   return (
     
     <React.Fragment>
       <nav className="nav-links">
-        <div>
-          <Dropdown />
+        <div id="dropdown">
+          <Dropdown countryNames={countryNames}/>
         </div>
         <ul className="nav-links">
             <li>
@@ -24,7 +27,7 @@ const ThirdPart = () => {
               <NavLink to="/charts">Charts</NavLink>
             </li>
             <li>
-              <NavLink to="/cases">More</NavLink>
+              <NavLink to="/">More</NavLink>
             </li>
         </ul>
       </nav>

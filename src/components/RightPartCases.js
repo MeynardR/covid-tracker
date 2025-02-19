@@ -52,18 +52,20 @@ const RightPartCases = (props) => {
                 <div style={{ fontFamily: 'Noto Sans, sans-serif', borderBottom: 'solid', borderWidth: '1px', borderColor: 'rgb(231, 231, 232)' }}>
 
                      <table style={{ fontSize: '1.2rem', textAlign: 'left', paddingLeft: '30px', paddingTop: '30px', borderSpacing: '0' }}>
-                        <tr style={{ height: '50px' }}>
-                            <th style={{ width: '160px'}}>Country</th>
-                            <th style={{ paddingLeft: '30px' }}>Cases</th>
-                        </tr>
-                        <tr style={{ height: '50px', fontWeight: 'bold' }}>
-                            <td style={{ border: '1px solid black', borderWidth: '1px 0', borderColor: 'rgb(231, 231, 232)'}}>World</td>
-                            <td style={{ border: '1px solid black', borderWidth: '1px 0 1px 1px', paddingLeft: '30px', borderColor: 'rgb(231, 231, 232)'}}>{val}</td>
-                        </tr>
-                        <tr>
-                        <td >{countriesCasesNamesList.slice(0, visible)}</td>
-                        <td >{formattedList.slice(0, visible)}</td>
-                        </tr>
+                        <tbody>
+                            <tr style={{ height: '50px' }}>
+                                <th style={{ width: '160px'}}>Country</th>
+                                <th style={{ paddingLeft: '30px' }}>Cases</th>
+                            </tr>
+                            <tr style={{ height: '50px', fontWeight: 'bold' }}>
+                                <td style={{ border: '1px solid black', borderWidth: '1px 0', borderColor: 'rgb(231, 231, 232)'}}>World</td>
+                                <td style={{ border: '1px solid black', borderWidth: '1px 0 1px 1px', paddingLeft: '30px', borderColor: 'rgb(231, 231, 232)'}}>{val}</td>
+                            </tr>
+                            <tr>
+                            <td >{countriesCasesNamesList.slice(0, visible)}</td>
+                            <td >{formattedList.slice(0, visible)}</td>
+                            </tr>
+                        </tbody>
                     </table>
 
                     {/* <div style={{ display: 'flex', flexDirection: 'row' }}>

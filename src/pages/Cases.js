@@ -15,6 +15,7 @@ const Cases = (props) => {
   const convertedDate = props.convertedDate;
 
   let countriesCases;
+  let countriesArray = [];
   let countryNames = [];
   let countriesCasesNamesList = [];
   let countriesCasesList = [];
@@ -41,7 +42,7 @@ const Cases = (props) => {
         return sortedCountriesCases.push(countryStat);
     })
 
-    const countriesArray = sortedCountriesCases.sort((a, b) => {
+    countriesArray = sortedCountriesCases.sort((a, b) => {
       // if statement checks if index a.cases is less than b.cases
       if (a.cases < b.cases) {
         // return 1 means that if statement is true then this put element a to the location of b on the array which means on the right
@@ -105,7 +106,7 @@ const Cases = (props) => {
     <React.Fragment>
       <FirstPart />
       <SecondPart />
-      <ThirdPart />
+      <ThirdPart countryNames={countryNames}/>
 
       {countriesData ?
         <div>

@@ -85,7 +85,7 @@ const App = () => {
     <React.Fragment>
       <Router>
         <Switch>
-          <Route path={["/", "/cases"]} exact>
+          <Route path={["/cases"]} exact>
             <Cases worldConfirmedCases={worldConfirmedCases} countriesData={countriesData} convertedDate={convertedDate}/>
           </Route>
           <Route path="/deaths" exact>
@@ -94,7 +94,7 @@ const App = () => {
           <Route path="/charts" exact>
             <Charts worldActiveCases={worldActiveCases} worldConfirmedCases={worldConfirmedCases} worldDeaths={worldDeaths}countriesData={countriesData}/>
           </Route>
-          <Redirect to="/"/>
+          <Redirect to="/cases"/>
         </Switch>
       </Router>
     </React.Fragment>

@@ -1,18 +1,19 @@
 .nav-links {
-    list-style: none;
     margin: 0;
-    padding: 0;
-    width: 100%;
+    padding: 1% 5%;
     height: 6rem;
     display: flex;
-    /* flex-direction: row; */
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
     font-weight: bold;
+  }
+
+  #dropdown {
+    padding-left: 6%;
   }
 
   .nav-links ul {
     list-style-type: none;
-    /* padding-left: 62%; */
   }
 
   
@@ -23,10 +24,8 @@
   }
   
   .nav-links a {
-    /* border: 1px solid transparent; */
     color: #0582bb;
     text-decoration: none;
-    /* padding: 0.9rem; */
   }
   
   .nav-links a:hover {
@@ -37,7 +36,6 @@
   }
 
   .nav-links a.active {
-    /* background: #0582bb; */
     border-color: #292929;
     color: #292929;
   }
