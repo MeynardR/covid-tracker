@@ -39,7 +39,7 @@ const DoughnutChart = (props) => {
     return (
         <React.Fragment>
             <div style={{ display: "block"}}>
-                <h1 style={{ fontSize: '2rem' }}>Ten Countries With Highest Number of Covid-19 cases (World)</h1>
+                <h1 style={{ fontFamily: 'Noto Sans, sans-serif', fontSize: '2rem' }}>Ten Countries With Highest Number of Covid-19 cases (World)</h1>
                 <Doughnut data={{
                     labels: [...countryNames],
                     datasets: [{

@@ -26,9 +26,9 @@ const ThirdPart = (props) => {
             <li>
               <NavLink to="/charts">Charts</NavLink>
             </li>
-            <li>
+            {/* <li>
               <NavLink to="/">More</NavLink>
-            </li>
+            </li> */}
         </ul>
       </nav>
     </React.Fragment>

@@ -15,11 +15,9 @@ const Deaths = (props) => {
   const convertedDate = props.convertedDate;
 
   let countriesDeaths;
+  let countriesArray = [];
   let countryNames = [];
-  let countriesDeathsNamesList = [];
-  let countriesDeathsList = [];
   let sortedCountriesDeaths = [];
-
 
   if (!!convertedDate && !!worldDeaths && !!countriesData) {
 
@@ -39,7 +37,7 @@ const Deaths = (props) => {
     })
 
 
-    const countriesArray = sortedCountriesDeaths.sort((a, b) => {
+    countriesArray = sortedCountriesDeaths.sort((a, b) => {
         // if statement checks if index a.cases is less than b.cases
         if (a.deaths < b.deaths) {
             // return 1 means that if statement is true then this put element a to the location of b on the array which means on the right
@@ -53,24 +51,9 @@ const Deaths = (props) => {
     })
 
     countriesArray.forEach(country => {
-        return countryNames.push(country.name)
+      return countryNames.push(country.name)
     });
 
-    countriesDeathsNamesList = countriesArray.map(country => {
-        return (
-            <div key={country.name} style={{ border: 'solid', borderWidth: '1px 0 1px 0', borderColor: 'rgb(231, 231, 232)', width: '10rem' }}>
-                <p style={{ fontSize: '1.2rem' }} >{country.name}</p>
-            </div>
-        )
-    })
-
-    countriesDeathsList = countriesArray.map(country => {
-        return (
-            <div key={country.cases} style={{ border: 'solid', borderWidth: '1px 0 1px 1px', borderColor: 'rgb(231, 231, 232)', width: '9rem' }}>
-                <p style={{ fontSize: '1.2rem', marginLeft: '20%' }} >{country.deaths}</p>
-            </div>
-        )
-    })
   }
 
 
@@ -89,7 +72,7 @@ const Deaths = (props) => {
             </div>
             {/* Right Part */}
             <div style={{ width: "45%" }}>
-              <RightPartDeaths convertedDate={convertedDate} worldDeaths={worldDeaths} countriesData={countriesData} countriesDeathsNamesList={countriesDeathsNamesList} countriesDeathsList={countriesDeathsList} newString="deaths" />
+              <RightPartDeaths convertedDate={convertedDate} worldDeaths={worldDeaths} countriesArray={countriesArray} newString="deaths" />
             </div>
           </section>
 

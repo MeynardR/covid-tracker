@@ -2,9 +2,9 @@
     fill: #EEE;
 }
 
-#geography:hover {
+/* #geography:hover {
     fill: #F53;
-}
+} */
 
 #circle {
     font-family: system-ui;
@@ -13,9 +13,7 @@
 }
 
 #circle:hover {
-    fill: black;
-    /* stroke: black;
-    stroke-width: 4px; */
+    fill: #81a0af;
 }
 
 #circle:hover + #hidden-text {
@@ -26,7 +24,6 @@
 }
 
 #hidden-text {
-    /* font-family: system-ui;  */
     visibility: hidden;
     white-space: pre;
 } 

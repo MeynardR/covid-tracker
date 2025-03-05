@@ -94,7 +94,7 @@ const MapChart = (props) => {
 
 
   return (
-    <ComposableMap style={{ paddingRight: '3%'}} projectionConfig={{ rotate: [-10, 0, 0] }}>
+    <ComposableMap style={{ height: '580px'}} projectionConfig={{ rotate: [-10, 0, 0] }}>
       <Geographies geography="/features.json">
         {({ geographies }) =>
           geographies.map((geo) => (
@@ -105,26 +105,24 @@ const MapChart = (props) => {
       </Geographies>
       {newString === "cases" && sortedCountriesCases.map(({ name, cases, lat, long }) => {
         return (
-          <Marker key ={name} coordinates={[long, lat]} >
-            <circle id="circle" r={popScaleCases(cases)} />
-            <text
-              id="hidden-text"
-              textAnchor="end"
-              x={5}
-              y={30}
-            >
-              {name}
-              <tspan> </tspan>
-              <tspan fill="red"  >{cases}</tspan>
-            </text>
-          </Marker>
+            <Marker key ={name} coordinates={[long, lat]} >
+              <circle id="circle" r={popScaleCases(cases)} />
+              {/* <svg id="hidden-text" viewBox="0 0 640 640" xmlns="http://www.w3.org/2000/svg">
+                <text textAnchor="start" x={-100} y={20} >{name}</text>
+              </svg> */}
+              <text style={{ textAlign: 'center'}} id="hidden-text" textAnchor="end" x={5} y={30}>
+                <tspan>{name}</tspan>
+                <tspan> </tspan>
+                <tspan fill="black" x={5} y={50}>{cases}</tspan>
+              </text>
+            </Marker>          
         );
       })}
       {newString === "deaths" && sortedCountriesDeaths.map(({ name, deaths, lat, long }) => {
         return (
           <Marker key ={name} coordinates={[long, lat]} >
             <circle id="circle" r={popScaleDeaths(deaths)} />
-            <text
+            {/* <text
               id="hidden-text"
               textAnchor="end"
               x={5}
@@ -132,7 +130,12 @@ const MapChart = (props) => {
             >
               {name}
               <tspan> </tspan>
-              <tspan fill="red"  >{deaths}</tspan>
+              <tspan fill="black"  >{deaths}</tspan>
+            </text> */}
+            <text style={{ textAlign: 'center'}} id="hidden-text" textAnchor="end" x={5} y={30}>
+              <tspan>{name}</tspan>
+              <tspan> </tspan>
+              <tspan fill="black" x={5} y={50}>{deaths}</tspan>
             </text>
           </Marker>
         );
