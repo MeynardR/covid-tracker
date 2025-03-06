@@ -44,17 +44,17 @@ const RightPartDeaths = (props) => {
     return (
         <React.Fragment>
 
-            <section style={{ border: '2px solid rgb(231, 231, 232)', borderRadius: '8px', marginLeft: '5%' }}>
-                <div style={{ fontFamily: 'Noto Sans, sans-serif', padding: '0 4% 3% 4%', borderBottom: 'solid', borderWidth: '2px', borderColor: 'rgb(231, 231, 232)' }}>
-                <p style={{ fontWeight: 'bold', fontSize: '2.5rem', lineHeight: '0.1' }}>{worldDeaths}</p>
+            <section id="first">
+                <div>
+                    <p style={{ fontWeight: 'bold', fontSize: '2.5rem', lineHeight: '0.1' }}>{worldDeaths}</p>
                     <p style={{ fontWeight: 'bold', fontSize: '1.2rem', lineHeight: '0.1' }}>Reported COVID-19 {newString}</p>
                     <p style={{ fontSize: '1rem', lineHeight: '1', color: '#595959' }}>{`As of ` + convertedDate}</p>
                 </div>
             </section>
 
-            <section style={{ border: '2px solid rgb(231, 231, 232)', borderRadius: '8px', marginLeft: '5%', marginTop: '5%' }}>
+            <section id="second">
 
-                <div style={{ fontFamily: 'Noto Sans, sans-serif', padding: '0 2% 3% 4%', borderBottom: 'solid', borderWidth: '1px', borderColor: 'rgb(231, 231, 232)' }}>
+                <div>
                     <p style={{ fontWeight: 'bold', fontSize: '1.6rem', lineHeight: '1.3' }}>Number of COVID-19 {newString} reported to WHO</p>
                     <p style={{ fontSize: '1rem', color: '#595959', lineHeight: '.1' }}>{`As of ` + convertedDate}</p>
                 </div>
@@ -66,26 +66,26 @@ const RightPartDeaths = (props) => {
                 hasMore={true}
                 height={350}
                 >
-                        <table style={{ fontFamily: 'Noto Sans, sans-serif', marginLeft: '5%', marginTop: '2.5%', textAlign: 'left' }}>
+                    <table id="table">
                         <tbody>
-                        <tr style={{ height: '7vh' }}>
-                            <th style={{ width: '35%' }}>Country</th>
-                            <th style={{ paddingLeft: '40px'}}>Cases</th>
-                        </tr>
-                        <tr style={{ height: '7vh', fontWeight: 'bold', textAlign: 'left' }}>
-                            <td style={{ border: '1px solid black', borderWidth: '1px 0 0 0', borderColor: 'rgb(231, 231, 232)'}}>World</td>
-                            <td style={{ border: '1px solid black', borderWidth: '1px 0 0 1px', borderColor: 'rgb(231, 231, 232)', paddingLeft: '10%'}}>{formattedWorldDeathsTotal}</td>
-                        </tr>
-                        {formattedDeathsCountriesArray.map((item, index) => {
-                            return(
-                                <tr key={index} style={{ height: '7vh', textAlign: 'left'}}>
-                                    <td style={{ border: '1px solid black', borderWidth: '1px 0 0 0', borderColor: 'rgb(231, 231, 232)'}}>{item.name}</td>
-                                    <td style={{ border: '1px solid black', borderWidth: '1px 0 0 1px', borderColor: 'rgb(231, 231, 232)', paddingLeft: '10%'}}>
-                                        {item.deaths}
-                                    </td>
-                                </tr>
-                            )
-                        })}
+                            <tr>
+                                <th>Country</th>
+                                <th>Cases</th>
+                            </tr>
+                            <tr>
+                                <td>World</td>
+                                <td>{formattedWorldDeathsTotal}</td>
+                            </tr>
+                            {formattedDeathsCountriesArray.map((item, index) => {
+                                return(
+                                    <tr key={index} style={{ height: '7vh', textAlign: 'left'}}>
+                                        <td style={{ border: '1px solid black', borderWidth: '1px 0 0 0', borderColor: 'rgb(231, 231, 232)'}}>{item.name}</td>
+                                        <td style={{ border: '1px solid black', borderWidth: '1px 0 0 1px', borderColor: 'rgb(231, 231, 232)', paddingLeft: '10%'}}>
+                                            {item.deaths}
+                                        </td>
+                                    </tr>
+                                )
+                            })}
                         </tbody>
                     </table>
                 </InfiniteScroll>

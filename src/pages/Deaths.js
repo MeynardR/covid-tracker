@@ -65,25 +65,25 @@ const Deaths = (props) => {
 
       {countriesData ?
         <div>
-          <section style={{ display: 'flex', padding: '0 10rem' }}>
+          <section id="main">
             {/* Left Part */}
-            <div style={{ width: "70%" }}>
+            <div>
               <LeftPart convertedDate={convertedDate} countriesData={countriesData} newString="deaths" />
             </div>
             {/* Right Part */}
-            <div style={{ width: "45%" }}>
+            <div>
               <RightPartDeaths convertedDate={convertedDate} worldDeaths={worldDeaths} countriesArray={countriesArray} newString="deaths" />
             </div>
           </section>
 
-          <section style={{ fontWeight: 'bold', display: 'flex', justifyContent: 'space-between', padding: '0 10rem' }}>
+          <section id='footer'>
             <p>Source: World Health Organization</p>
             <div>
               <p>Most recent data submission date: {convertedDate}</p>
               <p>Number of countries reported: {sortedCountriesDeaths.length}</p>
             </div>
           </section>
-        </div> : <p className="loading" style={{ textAlign: 'center', fontSize: '10rem' }}></p>
+        </div> : <p className="loading"></p>
       }
 
 

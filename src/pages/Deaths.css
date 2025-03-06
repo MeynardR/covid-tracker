@@ -1,21 +1,51 @@
+html {
+  font-family: system-ui, sans-serif;
+}
+
+#main {
+  display: flex;
+  padding: 8rem 10rem 0;
+  background-color: #f8f9fa;
+}
+
+#main + div {
+  width: 70%;
+}
+
+#main ~ div {
+  width: 45%;
+}
+
+#footer {
+  display: flex;
+  background-color: #f8f9fa;
+  font-weight: bold;
+  justify-content: space-between;
+  padding: 0 10rem;
+}
+
+.loading {
+  text-align: center;
+  font-size: 10rem;
+}
 
 .loading:after {
-    animation: dots 2s linear infinite;
-    content: '';   
+  animation: dots 2s linear infinite;
+  content: '';   
+}
+
+@keyframes dots {
+  0%, 20% {
+    content: '.';
   }
+  40% {
+    content: '..';
+  }
+  60% {
+    content: '...';
+  }
+  90%, 100% {
+    content: '....';
+  } 
+}
   
-  @keyframes dots {
-    0%, 20% {
-      content: '.';
-    }
-    40% {
-      content: '..';
-    }
-    60% {
-      content: '...';
-    }
-    90%, 100% {
-      content: '....';
-    } 
-  }
-    
